@@ -20,17 +20,17 @@ export interface Todo {
 }
 
 export const CATEGORIES: Category[] = [
-  { id: 'pekerjaan', name: 'Pekerjaan', bgColor: 'bg-orange-100', textColor: 'text-orange-700' },
-  { id: 'pribadi', name: 'Pribadi', bgColor: 'bg-pink-100', textColor: 'text-pink-700' },
-  { id: 'belanja', name: 'Belanja', bgColor: 'bg-emerald-100', textColor: 'text-emerald-700' },
-  { id: 'kesehatan', name: 'Kesehatan', bgColor: 'bg-blue-100', textColor: 'text-blue-700' },
-  { id: 'lainnya', name: 'Lainnya', bgColor: 'bg-stone-100', textColor: 'text-stone-600' },
+  { id: 'pekerjaan', name: 'Pekerjaan', bgColor: 'bg-gray-800', textColor: 'text-gray-200' },
+  { id: 'pribadi', name: 'Pribadi', bgColor: 'bg-gray-800/70', textColor: 'text-gray-300' },
+  { id: 'belanja', name: 'Belanja', bgColor: 'bg-gray-800/50', textColor: 'text-gray-300' },
+  { id: 'kesehatan', name: 'Kesehatan', bgColor: 'bg-gray-700', textColor: 'text-gray-200' },
+  { id: 'lainnya', name: 'Lainnya', bgColor: 'bg-gray-800/30', textColor: 'text-gray-400' },
 ]
 
 export const PRIORITIES: { value: Priority; label: string; color: string; activeColor: string }[] = [
-  { value: 'high', label: 'Tinggi', color: 'border-red-200 text-red-600', activeColor: 'bg-red-500 text-white border-red-500' },
-  { value: 'medium', label: 'Sedang', color: 'border-amber-200 text-amber-600', activeColor: 'bg-amber-500 text-white border-amber-500' },
-  { value: 'low', label: 'Rendah', color: 'border-emerald-200 text-emerald-600', activeColor: 'bg-emerald-500 text-white border-emerald-500' },
+  { value: 'high', label: 'Tinggi', color: 'border-gray-600 text-gray-300', activeColor: 'bg-gray-200 text-gray-950 border-gray-200' },
+  { value: 'medium', label: 'Sedang', color: 'border-gray-700 text-gray-400', activeColor: 'bg-gray-300 text-gray-950 border-gray-300' },
+  { value: 'low', label: 'Rendah', color: 'border-gray-700 text-gray-500', activeColor: 'bg-gray-400 text-gray-950 border-gray-400' },
 ]
 
 export function getCategory(id: string): Category {

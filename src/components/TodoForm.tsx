@@ -47,7 +47,7 @@ export function TodoForm({ onAdd }: TodoFormProps) {
               onChange={(e) => setTitle(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Tambahkan todo baru\u2026"
-              className="min-w-0 flex-1 border-0 bg-transparent text-base text-stone-700 placeholder-stone-400 outline-none focus:ring-0"
+              className="min-w-0 flex-1 border-0 bg-transparent text-base text-gray-200 placeholder-gray-600 outline-none focus:ring-0"
               autoFocus
               aria-label="Nama todo baru"
               name="todo-title"
@@ -83,7 +83,7 @@ export function TodoForm({ onAdd }: TodoFormProps) {
             >
               <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
                 <div>
-                  <label className="mb-1.5 block text-xs font-medium text-stone-500">Kategori</label>
+                  <label className="mb-1.5 block text-xs font-medium text-gray-500">Kategori</label>
                   <select
                     value={categoryId}
                     onChange={(e) => setCategoryId(e.target.value)}
@@ -98,7 +98,7 @@ export function TodoForm({ onAdd }: TodoFormProps) {
                 </div>
 
                 <div>
-                  <label className="mb-1.5 block text-xs font-medium text-stone-500">Prioritas</label>
+                  <label className="mb-1.5 block text-xs font-medium text-gray-500">Prioritas</label>
                   <div className="flex gap-1.5">
                     {PRIORITIES.map((p) => (
                       <button
@@ -106,7 +106,7 @@ export function TodoForm({ onAdd }: TodoFormProps) {
                         type="button"
                         onClick={() => setPriority(p.value)}
                         className={`flex-1 rounded-lg border px-3 py-1.5 text-xs font-medium transition duration-200 ${
-                          priority === p.value ? p.activeColor : p.color + ' bg-white'
+                          priority === p.value ? p.activeColor : p.color + ' bg-gray-900'
                         }`}
                       >
                         {p.label}
@@ -116,9 +116,9 @@ export function TodoForm({ onAdd }: TodoFormProps) {
                 </div>
 
                 <div>
-                  <label className="mb-1.5 block text-xs font-medium text-stone-500">Deadline</label>
+                  <label className="mb-1.5 block text-xs font-medium text-gray-500">Deadline</label>
                   <div className="relative">
-                    <CalendarBlank size={16} aria-hidden="true" className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" />
+                    <CalendarBlank size={16} aria-hidden="true" className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-600" />
                     <input
                       type="date"
                       value={deadline}

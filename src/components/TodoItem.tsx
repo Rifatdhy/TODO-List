@@ -5,7 +5,6 @@ import {
   Trash,
   PencilSimple,
   CalendarBlank,
-  Flag,
   X,
 } from '@phosphor-icons/react'
 import type { Todo } from '../types/todo'
@@ -61,8 +60,8 @@ export function TodoItem({ todo, onToggle, onDelete, onUpdate }: TodoItemProps) 
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.15 } }}
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className={`card group relative overflow-hidden transition duration-200 ${
-        todo.completed ? 'opacity-70' : ''
+      className={`card group relative overflow-hidden transition-all duration-200 ${
+        todo.completed ? 'opacity-50' : ''
       }`}
     >
       <div className="flex items-start gap-3 p-4 sm:p-5">
@@ -73,8 +72,8 @@ export function TodoItem({ todo, onToggle, onDelete, onUpdate }: TodoItemProps) 
           aria-label={todo.completed ? 'Tandai belum selesai' : 'Tandai selesai'}
           className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 transition duration-200 active:scale-[0.85] ${
             todo.completed
-              ? 'border-emerald-500 bg-emerald-500 text-white'
-              : 'border-stone-300 hover:border-amber-400'
+              ? 'border-gray-100 bg-gray-100 text-gray-950'
+              : 'border-gray-600 hover:border-gray-400'
           }`}
         >
           {todo.completed && <Check size={12} weight="bold" aria-hidden="true" />}
@@ -99,7 +98,7 @@ export function TodoItem({ todo, onToggle, onDelete, onUpdate }: TodoItemProps) 
               <div className="flex items-start justify-between gap-2">
                 <h3
                   className={`break-words text-sm font-medium leading-snug transition duration-200 ${
-                    todo.completed ? 'text-stone-400 line-through' : 'text-stone-800'
+                    todo.completed ? 'text-gray-600 line-through' : 'text-gray-200'
                   }`}
                 >
                   {todo.title}
@@ -116,23 +115,21 @@ export function TodoItem({ todo, onToggle, onDelete, onUpdate }: TodoItemProps) 
                 <span
                   className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium ${
                     todo.priority === 'high'
-                      ? 'border-red-200 bg-red-50 text-red-600'
+                      ? 'border-gray-600 bg-gray-800 text-gray-200'
                       : todo.priority === 'medium'
-                        ? 'border-amber-200 bg-amber-50 text-amber-600'
-                        : 'border-emerald-200 bg-emerald-50 text-emerald-600'
+                        ? 'border-gray-700 bg-gray-800/60 text-gray-300'
+                        : 'border-gray-700 bg-gray-800/30 text-gray-400'
                   }`}
                 >
-                  <Flag
-                    size={10}
-                    weight="fill"
-                    aria-hidden="true"
-                    className={
+                  <span
+                    className={`h-1.5 w-1.5 rounded-full ${
                       todo.priority === 'high'
-                        ? 'text-red-500'
+                        ? 'bg-gray-200'
                         : todo.priority === 'medium'
-                          ? 'text-amber-500'
-                          : 'text-emerald-500'
-                    }
+                          ? 'bg-gray-400'
+                          : 'bg-gray-600'
+                    }`}
+                    aria-hidden="true"
                   />
                   {priorityDef.label}
                 </span>
@@ -141,8 +138,8 @@ export function TodoItem({ todo, onToggle, onDelete, onUpdate }: TodoItemProps) 
                   <span
                     className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ${
                       isOverdue(todo.deadline) && !todo.completed
-                        ? 'bg-red-50 text-red-600'
-                        : 'bg-stone-100 text-stone-500'
+                        ? 'bg-gray-800 text-gray-300'
+                        : 'bg-gray-800/40 text-gray-500'
                     }`}
                   >
                     <CalendarBlank size={10} aria-hidden="true" />

@@ -17,15 +17,15 @@ const FILTERS: { value: Filter; label: string }[] = [
 export function FilterBar({ filter, onFilterChange, searchQuery, onSearchChange }: FilterBarProps) {
   return (
     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-      <div className="flex gap-1 rounded-lg bg-stone-100 p-1">
+      <div className="flex gap-1 rounded-lg bg-gray-900 p-1">
         {FILTERS.map((f) => (
           <button
             key={f.value}
             onClick={() => onFilterChange(f.value)}
             className={`rounded-md px-3.5 py-1.5 text-sm font-medium transition duration-200 ${
               filter === f.value
-                ? 'bg-white text-stone-800 shadow-sm'
-                : 'text-stone-500 hover:text-stone-700'
+                ? 'bg-gray-100 text-gray-950'
+                : 'text-gray-500 hover:text-gray-300'
             }`}
           >
             {f.label}
@@ -34,7 +34,7 @@ export function FilterBar({ filter, onFilterChange, searchQuery, onSearchChange 
       </div>
 
       <div className="relative w-full sm:w-56">
-        <MagnifyingGlass size={16} aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" />
+        <MagnifyingGlass size={16} aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-600" />
         <input
           type="text"
           value={searchQuery}
